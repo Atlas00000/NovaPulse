@@ -7,11 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       dotenv-flow:
         specifier: ^3.2.0
         version: 3.3.0
-    devDependencies:
       eslint:
         specifier: ^9.25.1
         version: 9.25.1
