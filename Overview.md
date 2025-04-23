@@ -11,32 +11,54 @@ Type Sharing: TypeScript + Zod (shared/)
 Env Management: .env.* with dotenv-flow
 Folder Layout
 NovaPulse/
+├── .gitignore
+├── package.json
+├── pnpm-workspace.yaml
+├── turbo.json
+├── .husky/
+│   └── pre-commit
 ├── apps/
-│   ├── client/               # Next.js front-end
-│   │   ├── components/       # UI components (shadcn-ui, Radix)
-│   │   ├── hooks/            # Custom React hooks
-│   │   ├── pages/            # Next.js pages & dynamic routes
-│   │   ├── styles/           # Tailwind config & global CSS
-│   │   ├── theme/            # Theme provider & dark/light toggle
-│   │   └── utils/            # Utilities (API callers, formatters)
-│   └── server/               # Express.js back-end
-│       ├── controllers/      # Route handlers
-│       ├── services/         # Business logic (AI, personalization, etc.)
-│       ├── routes/           # Express routers
-│       ├── middlewares/      # Auth, validation, rate-limiting
-│       ├── models/           # Mongoose schemas
-│       ├── utils/            # Logging, error handlers
-│       └── config/           # .env, Swagger setup, other configs
-├── shared/                   # Shared types, schemas, constants
+│   ├── client/                       # Next.js Frontend
+│   │   ├── app/
+│   │   │   ├── theme/
+│   │   │   │   └── ThemeProvider.tsx
+│   │   │   ├── articles/
+│   │   │   │   └── [slug]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── categories/
+│   │   │   │   └── [id]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── components/
+│   │   │   └── DarkModeSwitch.tsx
+│   │   ├── hooks/                     # e.g., useTheme.ts
+│   │   ├── styles/
+│   │   │   └── globals.css
+│   │   ├── tailwind.config.js
+│   │   ├── postcss.config.js
+│   │   ├── next.config.js
+│   │   ├── tsconfig.json
+│   │   └── package.json
+│   └── server/                       # Express Backend
+│       ├── controllers/
+│       ├── services/
+│       ├── routes/
+│       ├── middlewares/
+│       ├── models/
+│       ├── utils/
+│       └── config/
+├── shared/                          # Shared types & schemas
 │   ├── types/
 │   ├── schemas/
 │   └── constants/
-├── ai-services/              # Dockerized microservices (optional)
-│   ├── content-generator/    # OpenAI/Claude integration
-│   ├── personalization/      # Recommendation engine
-│   └── accessibility/        # i18n, TTS, voice support
-├── docs/                     # ADRs, API specs, design tokens
-└── infra/                    # Terraform, Kubernetes manifests
+├── ai-services/                     # Dockerized AI microservices
+│   ├── content-generator/
+│   ├── personalization/
+│   └── accessibility/
+├── docs/                            # ADRs, API specs, design tokens
+└── infra/                           # Terraform / Kubernetes manifests
+
 
 🎨 Frontend (Next.js + Tailwind)
 SSR, SSG & Edge Functions via App Router
