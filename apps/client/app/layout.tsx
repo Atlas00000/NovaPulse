@@ -3,6 +3,7 @@
 import '../styles/globals.css'
 import { ThemeProvider } from '../components/theme/ThemeProvider'
 import { NextSeo } from 'next-seo'
+import seoConfig from '../next-seo.config'
 import PlausibleProvider from 'next-plausible'
 import { DarkModeSwitch } from '../components/DarkModeSwitch'
 
@@ -13,8 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <NextSeo title="NovaPulse" description="AI-Driven News, Human Insight" />
-      <body>
+      <NextSeo {...seoConfig} />
+      {/* Move all bg/text utilities into the body tag */}
+      <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
         <PlausibleProvider domain="novapulse.media">
           <ThemeProvider>
             <header className="border-b p-4 flex justify-between items-center">
