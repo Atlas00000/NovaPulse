@@ -1,4 +1,5 @@
 // apps/client/app/layout.tsx
+
 "use client";
 
 import '../styles/globals.css'
@@ -15,16 +16,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <NextSeo {...seoConfig} />
-      {/* Move all bg/text utilities into the body tag */}
+      <head>
+        <NextSeo {...seoConfig} />
+      </head>
       <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
         <PlausibleProvider domain="novapulse.media">
           <ThemeProvider>
-            <header className="border-b p-4 flex justify-between items-center">
+            <header className="sticky top-0 bg-inherit border-b p-4 flex justify-between items-center z-10">
               <h1 className="text-2xl font-bold">NovaPulse</h1>
               <DarkModeSwitch />
             </header>
-            <main className="container mx-auto p-4">{children}</main>
+
+            <main className="container mx-auto p-4">
+              {children}
+            </main>
+
             <footer className="border-t p-4 text-center text-sm">
               © {new Date().getFullYear()} NovaPulse Media
             </footer>
