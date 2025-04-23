@@ -1,0 +1,32 @@
+{
+  "name": "NovaPulse",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "shared",
+    "ai-services/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint"
+  },
+  "dependencies": {
+    "dotenv-flow": "^3.2.0"
+  },
+  "devDependencies": {
+    "turbo": "^1.9.0",
+    "typescript": "^5.8.3",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "^3.5.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.5.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --fix"
+  }
+}
