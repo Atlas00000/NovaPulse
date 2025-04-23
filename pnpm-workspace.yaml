@@ -1,4 +1,7 @@
 packages:
-  - 'apps/*'
-  - 'shared'
-  - 'ai-services/*'
+  - apps/*
+  - shared
+  - ai-services/*
+
+onlyBuiltDependencies:
+  - unrs-resolver

@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "target": "ES2021",
+      "lib": ["DOM", "ESNext"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "baseUrl": ".",
+      "paths": {
+        "@/components/*": ["components/*"],
+        "@/hooks/*": ["hooks/*"],
+        "@/styles/*": ["styles/*"],
+        "@/theme/*": ["theme/*"],
+        "@/utils/*": ["utils/*"]
+      }
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
+  }
+  
