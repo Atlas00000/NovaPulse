@@ -1,11 +1,16 @@
 // apps/client/app/layout.tsx
-import './globals.css'
-import { ThemeProvider } from '@/theme/ThemeProvider'
+
+import '../styles/globals.css'
+import { ThemeProvider } from '../components/theme/ThemeProvider'
 import { NextSeo } from 'next-seo'
 import PlausibleProvider from 'next-plausible'
-import { DarkModeSwitch } from '@/components/DarkModeSwitch'
+import { DarkModeSwitch } from '../components/DarkModeSwitch'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <NextSeo title="NovaPulse" description="AI-Driven News, Human Insight" />

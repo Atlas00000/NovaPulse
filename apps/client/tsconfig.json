@@ -1,27 +1,54 @@
 {
-    "compilerOptions": {
-      "target": "ES2021",
-      "lib": ["DOM", "ESNext"],
-      "jsx": "preserve",
-      "module": "ESNext",
-      "moduleResolution": "Node",
-      "esModuleInterop": true,
-      "strict": true,
-      "baseUrl": ".",                  // ← important
-      "paths": {
-        "@/components/*": ["components/*"],
-        "@/hooks/*":      ["hooks/*"],
-        "@/theme/*":      ["theme/*"],
-        "@/styles/*":     ["styles/*"],
-        "@/utils/*":      ["utils/*"]
-      }
-    },
-    "include": [
-      "next-env.d.ts",
-      "**/*.ts",
-      "**/*.tsx",
-      "global.d.ts"                   // ← include your globals
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": [
+      "DOM",
+      "ESNext"
     ],
-    "exclude": ["node_modules"]
-  }
-  
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": ".", // ← important
+    "paths": {
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/theme/*": [
+        "theme/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/utils/*": [
+        "utils/*"
+      ]
+    },
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "global.d.ts",
+    "next-env.d.ts" // ← include your globals
+    ,
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
