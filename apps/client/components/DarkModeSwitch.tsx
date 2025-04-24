@@ -1,4 +1,5 @@
 // apps/client/components/DarkModeSwitch.tsx
+
 "use client";
 
 import React from "react";
@@ -13,7 +14,12 @@ export const DarkModeSwitch = () => {
       aria-label="Toggle dark mode"
       className="p-2 rounded focus:outline-none focus:ring"
     >
-      {theme === "dark" ? "🌙" : "☀️"}
+      {/* Show sun in dark mode, moon in light mode */}
+      {theme === "dark" ? (
+        <span className="text-xl">☀️</span>
+      ) : (
+        <span className="text-xl">🌙</span>
+      )}
     </button>
   );
 };
