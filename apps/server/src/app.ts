@@ -1,6 +1,10 @@
 import express from "express";
 import config from "./config";
+import "./config/db";
 import healthRoutes from "./routes/healthRoutes";
+
+// Connect to MongoDB
+// connectDB() is now in config/db
 
 export const app = express();
 
